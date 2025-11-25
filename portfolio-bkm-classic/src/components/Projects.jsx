@@ -6,9 +6,7 @@ import inspireReader from "../assets/inspire-reader.png";
 import chronoApp from "../assets/chrono-app.png";
 import agriculture from "../assets/agriculture.png";
 import taskManager from "../assets/task-manager.png";
-//import restaurant from "../assets/restaurant.png";
-//import streetburger from "../assets/streetburger.jpg"
-import resto from "../assets/resto.jpg"
+import resto from "../assets/resto.jpg";
 
 const projects = [
   {
@@ -16,14 +14,16 @@ const projects = [
     description:
       "Application complète avec Vue.js, Spring Boot et Flutter pour le troc d’objets.",
     tech: "Vue.js • Spring Boot • Flutter",
-    link: "https://github.com/Bkmx1220/Plateforme-d-change-TrocSpace",
-    image: banner_background, // ✅ import utilisé ici
+    link: "https://github.com/Bkmx1220/plateforme-d-change-de-bien-TrocSpace-partie-Frontend",
+    preview: "https://plateforme-d-change-de-bien-troc-sp.vercel.app/", // Lien déployé si disponible
+    image: banner_background,
   },
   {
     title: "Inspire Reader",
     description: "Mini app mobile de citations inspirantes développée avec Flutter.",
     tech: "Flutter",
     link: "https://github.com/Bkmx1220/inspire_reader",
+    preview: "",
     image: inspireReader,
   },
   {
@@ -31,6 +31,7 @@ const projects = [
     description: "Application simple de chronométrage réalisée en C#.",
     tech: "C#",
     link: "https://github.com/Bkmx1220/Application-de-chronom-tre",
+    preview: "",
     image: chronoApp,
   },
   {
@@ -39,6 +40,7 @@ const projects = [
       "Mise en relation entre experts et paysans via une plateforme Django.",
     tech: "Django",
     link: "https://github.com/Bkmx1220/Plateforme-agriculture-",
+    preview: "",
     image: agriculture,
   },
   {
@@ -47,13 +49,16 @@ const projects = [
       "Application web complète avec authentification et API NestJS.",
     tech: "ReactJS • NestJS",
     link: "https://github.com/Bkmx1220/App-web-de-gestion-de-t-ches-back-et-front-",
+    preview: "https://app-web-de-gestion-de-t-ches-partie-one.vercel.app/",
     image: taskManager,
   },
   {
     title: "Street Burger",
-    description: "Site web (frontend) responsive d’un restaurant moderne qui sert à commander et réserver des burgers",
-    tech: "reactJs • Tailwind CSS",
+    description:
+      "Site web responsive d’un restaurant moderne pour commander et réserver.",
+    tech: "ReactJS • Tailwind CSS",
     link: "https://github.com/Bkmx1220/site-web-restaurent-de-burger",
+    preview: "https://site-web-restaurent-de-burger.vercel.app/",
     image: resto,
   },
 ];
@@ -86,16 +91,34 @@ export default function Projects() {
             <h3 className="text-2xl font-semibold text-purple-300 mb-2">
               {project.title}
             </h3>
+
             <p className="text-gray-200 text-sm mb-3">{project.description}</p>
             <p className="text-sm text-purple-400 mb-4">{project.tech}</p>
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg transition"
-            >
-              Voir sur GitHub 🔗
-            </a>
+
+            {/* Boutons */}
+            <div className="flex gap-2">
+              {/* GitHub */}
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg transition"
+              >
+                GitHub 🔗
+              </a>
+
+              {/* Voir (même style que GitHub) */}
+              {project.preview && (
+                <a
+                  href={project.preview}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg transition"
+                >
+                  Voir 🌐
+                </a>
+              )}
+            </div>
           </div>
         ))}
       </div>
