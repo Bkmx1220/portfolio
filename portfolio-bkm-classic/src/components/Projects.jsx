@@ -15,7 +15,7 @@ const projects = [
       "Application complète avec Vue.js, Spring Boot et Flutter pour le troc d’objets.",
     tech: "Vue.js • Spring Boot • Flutter",
     link: "https://github.com/Bkmx1220/plateforme-d-change-de-bien-TrocSpace-partie-Frontend",
-    preview: "https://plateforme-d-change-de-bien-troc-sp.vercel.app/", // Lien déployé si disponible
+    preview: "https://plateforme-d-change-de-biens-et-ser.vercel.app/", // Lien déployé si disponible
     image: banner_background,
   },
   {
